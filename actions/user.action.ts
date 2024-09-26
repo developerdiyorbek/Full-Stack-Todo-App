@@ -32,7 +32,6 @@ export const createUser = async (data: ICreateUser) => {
     return newUser;
   } catch (error) {
     console.error(error);
-    throw new Error("Error create user. Try again");
   }
 };
 
@@ -44,7 +43,6 @@ export const getUser = async (clerkId: string) => {
     return JSON.parse(JSON.stringify(user));
   } catch (error) {
     console.error(error);
-    throw new Error("Error fetching user. Please try again.");
   }
 };
 
