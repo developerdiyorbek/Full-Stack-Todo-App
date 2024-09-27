@@ -16,7 +16,6 @@ import {
 
 const UserBox = () => {
   const { user } = useUser();
-  console.log(user);
 
   return (
     <DropdownMenu>
@@ -25,7 +24,7 @@ const UserBox = () => {
           <AvatarImage src={user?.picture} className="object-cover" />
         </Avatar>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-80" align="start" alignOffset={11}>
+      <DropdownMenuContent className="w-80" align="center">
         <DropdownMenuGroup>
           <div className="flex flex-col space-y-4 p-2">
             <p className="text-xs font-medium leading-none text-muted-foreground">
@@ -35,7 +34,10 @@ const UserBox = () => {
             <div className="flex items-center gap-x-2">
               <div className="rounded-md bg-secondary p-1">
                 <Avatar className="size-8">
-                  <AvatarImage src={user?.picture} />
+                  <AvatarImage
+                    src={user?.picture}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </Avatar>
               </div>
 

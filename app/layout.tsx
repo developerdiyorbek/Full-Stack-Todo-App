@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ChildProps } from "@/types";
 import "./globals.css";
 import { ThemeProvider } from "@/components/Provider/ThemeProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: ChildProps) {
             disableTransitionOnChange
           >
             {children}
+            <Toaster position="top-right" />
           </ThemeProvider>
         </body>
       </html>

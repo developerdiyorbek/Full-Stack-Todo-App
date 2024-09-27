@@ -1,8 +1,9 @@
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
 import Logo from "./Logo";
 import ModeToggle from "./ModeToggle";
 import { Button } from "../ui/button";
 import { LogIn } from "lucide-react";
+import UserBox from "./UserBox";
 
 function Header() {
   return (
@@ -12,7 +13,7 @@ function Header() {
         <div className="flex items-center gap-2">
           <ModeToggle />
           <SignedIn>
-            <UserButton />
+            <UserBox />
           </SignedIn>
           <SignedOut>
             <SignInButton>
