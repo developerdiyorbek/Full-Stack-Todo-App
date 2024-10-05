@@ -1,5 +1,6 @@
 import Header from "@/components/shared/Header";
 import { ChildProps } from "@/types";
+import React from "react";
 
 function Layout({ children }: ChildProps) {
   return (
