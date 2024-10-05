@@ -11,7 +11,6 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { useUser } from "@clerk/nextjs";
@@ -40,23 +39,22 @@ function AddTodo() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="mb-3">
         <FormField
           control={form.control}
           name="title"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Todo title</FormLabel>
               <FormControl>
-                <Input placeholder="title" {...field} />
+                <Input placeholder="title" {...field} className="mb-2" />
               </FormControl>
               <FormMessage />
             </FormItem>
           )}
         />
-        <div className="text-end">
-          <Button type="submit">Add</Button>
-        </div>
+        <Button type="submit" className="block ml-auto">
+          Add
+        </Button>
       </form>
     </Form>
   );
