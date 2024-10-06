@@ -36,6 +36,17 @@ export const completedTodo = async (todoId: string, completed: boolean) => {
   }
 };
 
+export const updateTodoTitle = async (todoId: string, title: string) => {
+  try {
+    await connectToDatabase();
+    const todo = await Todo.findByIdAndUpdate(todoId, { title });
+    revalidatePath("/");
+    return JSON.parse(JSON.stringify(todo));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const deleteTodo = async (todoId: string) => {
   try {
     await connectToDatabase();

@@ -2,11 +2,11 @@
 
 import { ITodo } from "@/types";
 import { Checkbox } from "@/components/ui/checkbox";
-import { completedTodo, deleteTodo } from "@/actions/todo.action";
+import { completedTodo } from "@/actions/todo.action";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Pencil, Trash2 } from "lucide-react";
 import { toast } from "sonner";
+import ConfirmModal from "@/components/modals/ConfirmModal";
+import EditModal from "@/components/modals/EditModal";
 
 interface Props {
   todo: ITodo;
@@ -14,7 +14,6 @@ interface Props {
 
 function TodoItem({ todo }: Props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [isDeletedLoading, setIsDeletedLoading] = useState(false);
 
   const handleCompleted = async (checked: boolean) => {
     setIsLoading(true);
@@ -25,19 +24,6 @@ function TodoItem({ todo }: Props) {
     toast.promise(promise, {
       loading: "Loading...",
       success: "Successfully completed!",
-      error: "Something went wrong",
-    });
-  };
-
-  const handleDelete = () => {
-    setIsDeletedLoading(true);
-    const promise = deleteTodo(todo._id).finally(() =>
-      setIsDeletedLoading(false)
-    );
-
-    toast.promise(promise, {
-      loading: "Loading...",
-      success: "Successfully deleted!",
       error: "Something went wrong",
     });
   };
@@ -59,17 +45,8 @@ function TodoItem({ todo }: Props) {
       </label>
       <div className="flex space-x-2">
         {" "}
-        <Button size={"icon"} variant={"ghost"}>
-          <Pencil className="size-[18px] md:size-[22px]" />
-        </Button>
-        <Button
-          variant="destructive"
-          size={"icon"}
-          onClick={handleDelete}
-          disabled={isDeletedLoading}
-        >
-          <Trash2 className="size-[18px] md:size-[22px]" />
-        </Button>
+        <EditModal todo={todo} />
+        <ConfirmModal todoId={todo._id} />
       </div>
     </li>
   );
