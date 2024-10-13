@@ -14,10 +14,23 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Full Stack Todo",
-  description: "Full Stack Todo App",
+  metadataBase: new URL("https://full-todo-app-one.vercel.app"),
+  title: "Full Stack todo app",
+  description: "A Todo Application Developed by Diyorbek Sulaymonov",
+  authors: [{ name: "Diyorbek Sulaymonov", url: "https://diyor-dev.uz" }],
+  openGraph: {
+    title: "Full Stack todo app",
+    description: "A Todo Application Developed by Diyorbek Sulaymonov",
+    type: "website",
+    url: "https://full-todo-app-one.vercel.app",
+    locale: "uz_UZ",
+    images: "https://full-todo-app-one.vercel.app/myImage.jpg",
+    countryName: "Uzbekistan",
+    siteName: "todo-app",
+    emails: "diyorbeksulaymonov70@gmail.com",
+  },
   icons: { icon: "/icon.webp" },
-  manifest: "/manifest.json",
+  keywords: "todo app, Todo",
 };
 
 export default function RootLayout({ children }: ChildProps) {
