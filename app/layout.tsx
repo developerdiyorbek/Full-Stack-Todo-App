@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Full Stack Todo",
   description: "Full Stack Todo App",
   icons: { icon: "/icon.webp" },
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: ChildProps) {
