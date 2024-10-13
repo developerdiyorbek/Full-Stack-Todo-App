@@ -14,7 +14,7 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://full-todo-app-one.vercel.app"),
+  metadataBase: new URL("https://full-stack-todo-app-mu.vercel.app"),
   title: "Full Stack todo app",
   description: "A Todo Application Developed by Diyorbek Sulaymonov",
   authors: [{ name: "Diyorbek Sulaymonov", url: "https://diyor-dev.uz" }],
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
     title: "Full Stack todo app",
     description: "A Todo Application Developed by Diyorbek Sulaymonov",
     type: "website",
-    url: "https://full-todo-app-one.vercel.app",
+    url: "https://full-stack-todo-app-mu.vercel.app",
     locale: "uz_UZ",
-    images: "https://full-todo-app-one.vercel.app/myImage.jpg",
+    images: "https://full-stack-todo-app-mu.vercel.app/myImage.jpg",
     countryName: "Uzbekistan",
     siteName: "todo-app",
     emails: "diyorbeksulaymonov70@gmail.com",
