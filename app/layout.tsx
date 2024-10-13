@@ -31,6 +31,7 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/icon.webp" },
   keywords: "todo app, Todo",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({ children }: ChildProps) {
